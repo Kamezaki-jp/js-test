@@ -91,18 +91,23 @@
 // インプット引数なし
 // アウトプット戻り値あり
 
-function getNumberOfComment(){
-  return 5;
-}
+// function getNumberOfComment(){
+//   return 5;
+// }
 
-console.log(getNumberOfComment());
+// console.log(getNumberOfComment());
 
 // インプット引数が２つ
 // アウトプット戻り値あり
-function sumPrice(int1, int2){
-  let int3 = int1 + int2;
-  return int3;
-}
+// function sumPrice(int1, int2){
+//   let int3 = int1 + int2;
+//   return int3;
+// }
 
-const total = sumPrice(3,5);
-console.log(total);
+// const total = sumPrice(3,5);
+// console.log(total);
+
+// 文字の置き換え
+const test_3 = "テストです";
+
+console.log(test_3.replace("テスト","ファイト"));
