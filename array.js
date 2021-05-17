@@ -10,6 +10,7 @@ console.log(fruits);
 // push 配列の末尾に要素を追加
 fruits.push('みかん');
 fruits.push('メロン');
+fruits.push('ぶどう');
 
 console.log(fruits);
 
