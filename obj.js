@@ -31,10 +31,11 @@ const postal = {
   // objectの中に関数を作る書き方2種類
   // checkPostalCode: function(){}
   checkPostalCode(){
-    const replaced = this.postalCode.replace('-','');
-    const length = replaced.length;
+    // メソッドチェーン
+    const replaced = this.postalCode.replace('-','').length;
+    // const length = replaced.length;
   
-    if (length === 7){
+    if (replaced === 7){
       return true;
     }
     return false;
@@ -47,3 +48,19 @@ const postal = {
 
 console.log(postal.checkPostalCode());
 
+const person = {
+  name: '本田',
+  age: 30,
+
+  getName() {
+    console.log(this.name);
+    return this;
+  },
+
+  getAge(){
+    console.log(this.age);
+    return this;
+  }
+};
+
+person.getName().getAge();
