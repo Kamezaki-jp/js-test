@@ -49,3 +49,41 @@ getItem();
 
 // after
 fruits.forEach(input => console.log(input));
+
+// Array.filter(配列に新しい条件を付けて配列を作る)
+// let newArray = arr.filter(callback(element[, index[, array]])[, thisArg])
+
+// callback配列の各要素に対して実行するテスト関数。
+// この関数がTrueを返した要素は残され、falseを返した要素は取り除かれます。
+// この関数には3つの引数が与えられます。
+
+// element 配列内の現在の要素
+// index 配列内の現在の要素の添字
+// array filterメソッドを実行している配列
+// thisArg callbackを実行するときにthisとして使う値
+
+const scores = [10,20,30,40];
+// 30以上の値を取り出す
+const newScores = scores.filter(value => {
+  return value >= 30;
+});
+// シンタックスシュガー
+// const newScores = scores.filter((value) => value >= 30);
+
+console.log(newScores);
+
+// Array.find
+const members = ['本田','香川','長友'];
+
+const member = members.find(value => value === '長友');
+
+console.log(member);
+
+// Array.map 配列を元に新しい配列を作る
+
+const userList = [10,20,30,40];
+// テンプレート文字列 `${}` バッククォート
+const userIdList = userList.map(value => `user_${value}`);
+
+console.log(userIdList);
+console.table(userIdList);
