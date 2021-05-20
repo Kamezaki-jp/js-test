@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .red {
+      color: red;
+    }
+    .blue {
+      color: blue;
+    }
+  </style>
+</head>
+<body>
+  <div id="grand-fater">
+    <div id="parent">
+      <div id="target">
+        自分
+      </div>
+    </div>
+
+    <div id="divList">
+      <div class="div1">テスト1</div>
+      <div class="div2">テスト2</div>
+      <div class="div3">テスト3</div>
+    </div>
+  </div>
+
+  <script>
+    // -------------------------------
+    // タグ（Element）の追加
+    // -------------------------------
+
+    // 子要素として追加
+    // el.appendChild();
+
+    // 同じ階層に追加
+    // el.parentNode.appendChild();
+
+    // 追加する箇所の指定(new, 対象)
+    // el.insertBefore(,);
+
+
+    const target = document.getElementById('target');
+    const newDiv = document.createElement('div');
+    newDiv.id = 'test';
+    newDiv.classList.add('red');
+    newDiv.textContent = 'テスト';
+    // targetの子として要素を追加
+    // targetのdivタグ内に追加している
+    target.appendChild(newDiv);
+
+    // targetのdivを閉じて、その下に追加する
+    target.parentNode.appendChild(newDiv);
+
+
+    // insertBefore
+    const targetList = document.getElementById('divList');
+    const reference = document.querySelector('.div2');
+    const newElement = document.createElement('div');
+
+    newElement.classList.add('div4');
+    newElement.textContent = '追加分';
+    targetList.insertBefore(newElement, reference);
+  </script>
+</body>
+</html>
