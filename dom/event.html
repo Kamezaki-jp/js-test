@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .red {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <div id="test"></div>
+  <!-- HTMLのタグに設定 -->
+  <!-- <button id="target" onclick="change_color()">押してね</button> -->
+  <button id="target">押してね</button>
+  <script>
+    // ------------------------------------
+    // eventの設定方法
+    // ------------------------------------
+
+    // 1つ目 HTMLタグにonclickを設定する
+    // function change_color(){
+    //   const test = document.getElementById('test');
+    //   test.textContent = 'テスト';
+    //   test.classList.add('red');
+    // };
+
+    // 2つ目 JSで設定 Element.onclick
+    // document.getElementById('target').onclick = function(){
+    //   const test = document.getElementById('test');
+    //   test.textContent = 'テスト';
+    //   test.classList.add('red');
+    // };
+
+    // 3つ目 イベントリスナー
+    const target = document.getElementById('target');
+
+    target.addEventListener('click', () => {
+      const test = document.getElementById('test');
+      test.textContent = 'テスト';
+      test.classList.add('red');
+    });
+  </script>
+</body>
+</html>
