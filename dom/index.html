@@ -5,8 +5,27 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="css/app.scss">
 </head>
 <body>
-  
+  <div id="test">
+    <ul>
+      <li class="test_list">テスト1</li>
+      <li class="test_list">テスト2</li>
+      <li class="test_list">テスト3</li>
+    </ul>
+  </div>
+
+  <script>
+    const test = document.getElementById('test');
+    // querySelectorの場合は、id取得なら「#」 class取得なら「.」をつける
+    // querySelectorは、複数クラスがついている場合は、先頭のみ取得
+    const testList = document.querySelector('.test_list');
+    const testLists = document.querySelectorAll('.test_list');
+
+    console.log(test);
+    console.log(testList);
+    console.log(testLists);
+  </script>
 </body>
 </html>
