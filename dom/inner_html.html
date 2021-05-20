@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- 属性 attribute -->
+  <input id="test">あああ
+
+  <script>
+    // -------------------------------
+    // Elementの追加
+    // -------------------------------
+  
+    const input = document.getElementById('test');
+    // Element
+    input.type = 'text';
+    input.placeholder = 'aaa';
+    input.name = 'test';
+    // input.setAttribute('type','text');
+
+    console.log(input);
+
+    // タグの作成 createElement
+    const anchor = document.createElement('a');
+
+    anchor.href = 'https://google.com';
+    // _blank 別タグで開く
+    anchor.target = '_blank';
+    console.log(anchor);
+  </script>
+</body>
+</html>
