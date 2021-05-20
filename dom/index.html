@@ -5,22 +5,39 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="css/app.scss">
+  <link rel="stylesheet" href="css/app.css">
+  <style>
+    .red {
+      color: red;
+    }
+    .blue {
+      color: blue;
+    }
+  </style>
 </head>
 <body>
   <div id="test">
     <ul>
-      <li class="test_list">テスト1</li>
+      <li class="test_list blue">テスト1</li>
       <li class="test_list">テスト2</li>
       <li class="test_list">テスト3</li>
     </ul>
   </div>
 
   <script>
-    const test = document.getElementById('test');
+
+    //----------------------------------
+    // classList.add / classList.remove
+    // ---------------------------------
+
+    // 返り値は Element
+    const test = document.getElementById('test').classList.add('red');
     // querySelectorの場合は、id取得なら「#」 class取得なら「.」をつける
     // querySelectorは、複数クラスがついている場合は、先頭のみ取得
+    // 返り値は Element
     const testList = document.querySelector('.test_list');
+    testList.classList.remove('blue');
+    // 返り値は Node
     const testLists = document.querySelectorAll('.test_list');
 
     console.log(test);
