@@ -1,16 +1,16 @@
 'use strict';
 
 // DOMContentLoaded
-// document.addEventListener('DOMContentLoaded',() => {
-//   setInterval(() => {
-//     let target = currentIndex + 1;
-//     if (target === images.length) {
-//       target = 0;
-//     }
-//     document.querySelectorAll('.carousel__thumbnails > li')[target].click();
-//     console.log(currentIndex);
-//   }, 2000);
-// });
+document.addEventListener('DOMContentLoaded',() => {
+  setInterval(() => {
+    let target = currentIndex + 1;
+    if (target === images.length) {
+      target = 0;
+    }
+    document.querySelectorAll('.carousel__thumbnails > li')[target].click();
+    console.log(currentIndex);
+  }, 2000);
+});
 
 // window.onload = 関数
 // load
