@@ -1,6 +1,10 @@
 'use strict';
 
 // DOMContentLoaded
+// setTimeout(callback, ms); 時間後
+// setInterval(callback, ms); 時間毎
+// Math.floor(Math.random() * 範囲);
+
 document.addEventListener('DOMContentLoaded',() => {
   setInterval(() => {
     let target = currentIndex + 1;
