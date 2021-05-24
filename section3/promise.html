@@ -68,22 +68,28 @@
     // Promise .then(ok_callback, ng_callback)
     // Promise .then((ok_value) => {}, (ng_reason) => {})
     // Promise .catch((ng_reason) => {}) //NGはcatch
+    
 
+    // ngも追加
+    // new Promise((ok, ng) => {})
     function promiseTest4(pay){
-      return new Promise(ok => {
+      return new Promise((ok, ng) => {
+        if(pay >100){
         let change = pay - 100;
         ok(change);
+        }
+        ng('お金が足りません');
       })
     }
 
-    console.log(promiseTest4(300));
+    console.log(promiseTest4(80).catch(e => {console.log(e)}));
 
-    promiseTest4(300).then(change => {
-      console.log(change);
-      return promiseTest4(change); //Promiseでラップされる
-    }).then(change => {
-      console.log(change);
-    });
+    promiseTest4(180).then(change1 => {
+      console.log(change1);
+      return promiseTest4(change1); //Promiseでラップされる
+    }).then(change2 => {
+      console.log(change2);
+    }).catch(e => console.log(e));
 
   </script>
 </body>
