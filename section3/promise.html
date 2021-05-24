@@ -55,14 +55,36 @@
     console.log(promiseTest2);
 
     // インプットあり
-    function testPromise3(input){
+    function promiseTest3(input){
       return new Promise(ok => {
         // 何かしらの処理
         ok(`プロミス${input}です`);
       });
     }
 
-    console.log(testPromise3('太郎'));
+    console.log(promiseTest3('太郎'));
+
+    // promise チェーン
+    // Promise .then(ok_callback, ng_callback)
+    // Promise .then((ok_value) => {}, (ng_reason) => {})
+    // Promise .catch((ng_reason) => {}) //NGはcatch
+
+    function promiseTest4(pay){
+      return new Promise(ok => {
+        let change = pay - 100;
+        ok(change);
+      })
+    }
+
+    console.log(promiseTest4(300));
+
+    promiseTest4(300).then(change => {
+      console.log(change);
+      return promiseTest4(change); //Promiseでラップされる
+    }).then(change => {
+      console.log(change);
+    });
+
   </script>
 </body>
 </html>
